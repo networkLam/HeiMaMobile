@@ -6,11 +6,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent,ref } from 'vue';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-
+interface MyInfomation{
+  name : string,
+  age : number,
+  address :string[]
+}
 export default defineComponent({
   name: 'Home',
+  setup(){
+    const test = ref<MyInfomation>({
+      name : "",
+      age : 12,
+      address :['']
+    })
+  },
   components: {
     HelloWorld,
   },
